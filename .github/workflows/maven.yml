@@ -1,31 +1,10 @@
-package com.driver;
+name: Acciojob Tests
 
-import java.util.List;
+on:
+  push:
+    branches: [ "main","master" ]
 
-public class User {
-    private String name;
-    private String mobile;
-
-    public User() {}
-
-    public User(String name, String mobile) {
-        this.name = name;
-        this.mobile = mobile;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-}
+jobs:
+  calling-acciojob-main-action:
+    uses: acciojob/acciojob-tests-action/.github/workflows/main-action.yml@main
+    secrets: inherit
