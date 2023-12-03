@@ -1,25 +1,31 @@
-name: Java CI with Maven
+package com.driver;
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+import java.util.List;
 
-jobs:
-  build:
+public class User {
+    private String name;
+    private String mobile;
 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: maven
-      - name: Junit Assignment Action
-        id: assignmentAction
-        uses: acciojob/junit-github-action@v0.12
-        env:
-          ACCIO_ASGMNT_ACTION_TOKEN: ${{ secrets.ACCIO_ASGMNT_ACTION_TOKEN }}
+    public User() {}
+
+    public User(String name, String mobile) {
+        this.name = name;
+        this.mobile = mobile;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+}
